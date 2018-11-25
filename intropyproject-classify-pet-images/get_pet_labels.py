@@ -48,6 +48,8 @@ def get_pet_labels(image_dir):
 
     results_dic = {}
     for item in onlyfiles:
+        if item.startswith('.'):
+            continue
         label = item.split('_')
         label.pop()
         results_dic[item] = [' '.join(label).lower(), ]
